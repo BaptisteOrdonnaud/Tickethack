@@ -2,26 +2,26 @@ var express = require('express');
 var router = express.Router();
 
 const Trip = require('../models/trips');
+const { checkBody } = require('../modules/checkBody');
+
 
 /* GET home page. */
 router.get('/trips', (req, res) => {
   const { departure, arrival, date } = req.body
-  const checkBody = (body, keys) => {
-    for (let i = 0; i < keys.length; i++) {
-      if (!body[keys[i]]) {
-        return false
-      }
-    }
-    return true
-  };
 
-  if (!checkBody(req.body, ["email", "password"])) {
-    res.json({ result: false, error: 'Missing or empty fields' });
+
+  if (!checkBody(req.body, ["departure", "arrival", "date"])) {
+    res.json({ error: 'Missing or empty fields' });
     return;
-  }
-  Trip.find().then(trips => {
-    res.json({ trips });
+  } Trip.findOne({ departure: departure, arrival: arrival, date: date }).then(dbData => {
+    if (dbData === null) {
+      res.json({ result: false, error: 'Trip not found' })
+    } else {
+
+      res.json({ result: dbData });
+    }
   });
+
 });
 
 module.exports = router;
