@@ -34,7 +34,7 @@ const updateUserTrips = (travelId, res) => {
 }
 
 // travel not payed
-router.get('/chercheTrip', async (req, res) => {
+router.get('/notPayedTrip', async (req, res) => {
 
   const user = await User.findById(idUser).populate('trips.trip');
 
@@ -75,6 +75,22 @@ router.delete("/deleteTrip", async (req, res) => {
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
+
+//push les trips payed sur Booking
+
+router.get('/tripBooked', async (req, res) => {
+  try {
+
+    const user = await User.findById(idUser).populate('trips.trip');
+    const cartPayed = user.trips.filter((trip) => trip.isPaid);
+
+    res.json({ cartPayed });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+});
+
 
 
 
