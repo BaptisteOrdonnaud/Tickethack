@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Fontspring';
+    src: url('/Frontend/font/FontSpring/Fontspring-DEMO-aestetico-black.otf') format('truetype');
+    /* Assurez-vous que le chemin est correct */
+    /* Ajoutez d'autres propriétés de police si nécessaire, comme font-weight et font-style */
+}
