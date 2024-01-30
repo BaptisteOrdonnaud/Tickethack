@@ -1,0 +1,139 @@
+#container {
+    height: 93%;
+    background-color: #F1F4F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-container {
+    background: white;
+    width: 50%;
+    text-align: center;
+}
+
+/* CART */
+
+#container-cart-text {
+    display: block;
+}
+
+#container-cart-full {
+    display: none;
+}
+
+#container-cart-full h3 {
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+
+#container-cart-text h2 {
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin: 5% 0%;
+}
+
+
+#state-trip-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #F7F1F0;
+    margin: 5% 7%;
+    padding: 1% 2%;
+    border-radius: 8px;
+}
+
+#state-trip-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+
+}
+
+#trip-book {
+    background-color: #4AA990;
+    border: none;
+    color: white;
+    padding: 1% 2%;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#city-A {
+    margin-right: 4px;
+}
+
+#city-B {
+    margin-left: 4px;
+}
+
+#cart-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #011647;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    padding: 2% 5%;
+}
+
+#cart-total h2 {
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 100;
+    font-size: 1.1rem;
+}
+
+#cart-total button {
+    background-color: #4AA990;
+    border: none;
+    color: white;
+    padding: 1% 2%;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+
+
+
+/* BOOKINGS */
+
+
+#container-booking-full {
+    display: none;
+}
+
+#container-booking-full h3 {
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+
+#container-books-text {
+    display: block;
+}
+
+#container-books-text h2 {
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin: 5% 0%;
+}
+
+#barre-noire {
+    background-color: #171717;
+    height: 2px;
+    margin: 0px 30%;
+}
+
+#container-booking-full p {
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 500;
+    color: #4AA990;
+    margin: 3% 0px;
+}

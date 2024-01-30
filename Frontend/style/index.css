@@ -1,17 +1,179 @@
-header {
-    width: 100vw;
-    height: 100vh;
-    background-color: red;
+#container {
+    height: 93%;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
 }
 
-#nav {
+#container-title h1 {
+    color: white;
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    padding: 1.6% 0;
+}
+
+#container-title p {
+    color: white;
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+
+#container-title {
+    text-align: center;
+}
+
+span {
+    font-family: Montserrat, sans-serif;
+}
+
+#card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+
+#card-left {
+    width: 25%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 2%;
+}
+
+#card-right {
+    width: 25%;
+    background-color: white;
+    margin-left: 10%;
+    border-radius: 8px;
+}
+
+input {
+    background-color: #F1F4F3;
+    border: none;
+    padding: 5% 3%;
+}
+
+input::placeholder {
+    font-family: 'Fontspring', sans-serif;
+    font-size: 1rem;
+}
+
+
+
+#date {
+    margin-top: 10%;
+    margin-bottom: 30%;
+    color: #757575;
+}
+
+.input-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+#search-trip {
+    background-color: #4AA990;
+    border: none;
+    color: white;
+    padding: 4% 10%;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#barre {
+    background-color: #AFB2B1;
+    height: 1.5px;
+    margin: 0px 9px;
+}
+
+
+
+/* STATE-SEARCH */
+
+
+#train-img {
+    width: 35%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+
+#barre-verte {
+    background-color: #4AA990;
+    height: 2px;
+    margin: 0px 20%;
+    margin-bottom: 10%;
+}
+
+#img-container {
+    display: flex;
+    justify-content: center;
+}
+
+#state-search-text {
+    text-align: center;
+    font-family: 'Fontspring', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #000102;
+}
+
+#state-search {
+    display: none;
+}
+
+
+/* STATE-ERROR */
+
+#state-error {
+    display: none;
+}
+
+/* STATE-TRIP */
+
+#state-trip {
+    display: block;
+    overflow: scroll;
+    height: 400px;
+
+}
+
+#state-trip-content {
     display: flex;
     justify-content: space-between;
-    background-color: white;
-    padding: 0 5%;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #F7F1F0;
+    margin: 5% 7%;
+    padding: 3% 6%;
+    border-radius: 8px;
 }
 
-#logo {
-    font-family: 'Fontspring', sans-serif;
-    font-size: 1.4rem;
+#state-trip-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+
+}
+
+#trip-book {
+    background-color: #4AA990;
+    border: none;
+    color: white;
+    padding: 3% 4%;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#city-A {
+    margin-right: 4px;
+}
+
+#city-B {
+    margin-left: 4px;
 }

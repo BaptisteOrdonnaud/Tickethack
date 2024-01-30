@@ -16,31 +16,154 @@
 <body>
     <header>
         <nav id="nav">
-            <div>
+            <div class="logo">
                 <a id="logo" href="index.html">Tickethack</a>
             </div>
-            <div>
-                <a href="#">Cart</a>
-                <a href="#">Bookings</a>
+            <div class="nav-links">
+                <a href="cart.html">Cart</a>
+                <a href="bookings.html">Bookings</a>
             </div>
         </nav>
-        <div>
-            <div>
-                <h1>Explore the world effortlessly by train!</h1>
+        <div id="container">
+            <div id="container-title">
+                <h1>Explore the world effortlessly by train<span>!</span></h1>
                 <p>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack</p>
             </div>
 
-            <div>
-                <input type="text" placeholder="Departure">
-                <input type="text" placeholder="Arrival">
-                <input type="date">
-                <button>Search</button>
-            </div>
+            <div id="card-container">
 
-            <div>
-                <img src="images/train.png" alt="Image de train">
-                <div>ligne</div>
-                <h3>It's time to book your future trip</h3>
+                <div id="card-left">
+                    <input class="input-text" id="departure" type="text" placeholder="Departure">
+                    <div id="barre"></div>
+                    <input class="input-text" id="arrival" type="text" placeholder="Arrival">
+                    <input class="input-text" id="date" type="date">
+                    <button id="search-trip">Search</button>
+                </div>
+
+                <div id="card-right">
+
+                    <!-- CONTENU DE BASE !  -->
+                    <div id="state-search">
+                        <div id="img-container">
+                            <img id="train-img" src="images/train.png" alt="Image de train">
+                        </div>
+                        <div id="barre-verte"></div>
+                        <h3 id="state-search-text">It<span>'</span>s time to book your future trip</h3>
+                    </div>
+
+                    <!-- CONTENU ERROR!  -->
+                    <div id="state-error">
+                        <div id="img-container">
+                            <img id="train-img" src="images/notfound.png" alt="Image de train">
+                        </div>
+                        <div id="barre-verte"></div>
+                        <h3 id="state-search-text">No trip found.</h3>
+                    </div>
+
+                    <!-- CONTENU TRIP!  -->
+                    <div id="state-trip">
+
+
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+                        <div id="state-trip-content">
+                            <div id="state-trip-cities">
+                                <span id="city-A">Paris</span>
+                                <span>></span>
+                                <span id="city-B">Lyon</span>
+                            </div>
+                            <span id="trip-hours">18:48</span>
+                            <span id="trip-price">53€</span>
+                            <button id="trip-book">Book</button>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
             </div>
 
         </div>
