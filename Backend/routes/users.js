@@ -4,6 +4,12 @@ const User = require('../models/users')
 
 const idUser = '65b9273e625302934946df7d';
 
+router.get('/cart', (req, res) => {
+  User.findOne({ username: 'Jason' }).then(user => {
+    res.json({ cart: user.trips })
+  })
+})
+
 
 router.post('/addToCart', (req, res) => {
   let travelId = req.body.travelId;

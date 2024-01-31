@@ -8,7 +8,7 @@ const { checkBody } = require('../modules/checkBody');
 
 /* GET home page. */
 
-router.get('/trips', (req, res) => {
+router.post('/trips', (req, res) => {
   let { departure, arrival, date } = req.body
 
   const startDate = date + 'T00:00:00.001+00:00';
