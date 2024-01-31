@@ -7,6 +7,7 @@ function Cart() {
             if (data.allTrips.length) {
                 document.querySelector('#container-cart-text').style.display = 'none'
                 document.querySelector('#container-cart-full').style.display = 'block'
+                let totalPrice = 0;
 
                 for (let i = 0; i < data.allTrips.length; i++) {
                     const id = data.allTrips[i].trip._id;
@@ -14,7 +15,7 @@ function Cart() {
                     const arrival = data.allTrips[i].trip.arrival;
                     const date = data.allTrips[i].trip.date;
                     const price = data.allTrips[i].trip.price;
-
+                    totalPrice += price;
                     // Convertir la date en objet Date
                     const tripDate = new Date(date);
 
@@ -35,8 +36,12 @@ function Cart() {
                             <button id="${id}" class="trip-book">X</button>
                         </div>
                     `;
+
+
                 }
+                document.querySelector("#total").textContent = totalPrice
                 deleteTrip()
+
             }
 
         })
@@ -61,6 +66,7 @@ function deleteTrip() {
                     if (data.result) {
                         document.querySelectorAll('.trip-book')[i].parentNode.remove();
                     }
+                    location.reload();
                 });
         });
     }
@@ -68,3 +74,12 @@ function deleteTrip() {
 
 const total = document.querySelector("#id");
 
+
+document.querySelector('#purchase').addEventListener("click", function () {
+
+    fetch('http://localhost:3000/users/payTrip', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json())
+    window.location.assign('bookings.html')
+})
