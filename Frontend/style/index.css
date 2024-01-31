@@ -83,6 +83,7 @@ input::placeholder {
     padding: 4% 10%;
     border-radius: 8px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 #barre {
@@ -168,6 +169,7 @@ input::placeholder {
     padding: 3% 4%;
     border-radius: 8px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 #city-A {
