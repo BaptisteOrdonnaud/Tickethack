@@ -37,6 +37,9 @@ function tripsBooked() {
                     document.querySelector('#state-trip-content').innerHTML += tripContent;
                 }
 
+            } else {
+                document.querySelector('#container-books-text').style.display = 'block';
+                document.querySelector('#container-books-full').style.display = 'none';
             }
         });
 }

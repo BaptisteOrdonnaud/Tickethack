@@ -9,8 +9,10 @@ function Cart() {
                 document.querySelector('#container-cart-full').style.display = 'block'
                 let totalPrice = 0;
 
+
                 for (let i = 0; i < data.allTrips.length; i++) {
                     const id = data.allTrips[i].trip._id;
+
                     const departure = data.allTrips[i].trip.departure;
                     const arrival = data.allTrips[i].trip.arrival;
                     const date = data.allTrips[i].trip.date;
@@ -40,6 +42,7 @@ function Cart() {
 
                 }
                 document.querySelector("#total").textContent = totalPrice
+
                 deleteTrip()
 
 
@@ -49,6 +52,7 @@ function Cart() {
 }
 
 Cart()
+
 function deleteTrip() {
     const tripBooks = document.querySelectorAll('.trip-book');
     for (let i = 0; i < tripBooks.length; i++) {
@@ -56,6 +60,8 @@ function deleteTrip() {
             const body = {
                 travelId: tripBooks[i].id
             };
+            console.log(tripBooks[i].id)
+            return
 
             fetch(`http://localhost:3000/users/deleteTrip`, {
                 method: 'DELETE',
