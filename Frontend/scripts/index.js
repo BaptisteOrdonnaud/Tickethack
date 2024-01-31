@@ -13,9 +13,6 @@ document.querySelector('#search-trip').addEventListener("click", function () {
     console.log(body)
 
 
-
-
-
     const tripCrafter = (departure, arrival, date, price) => {
 
         // Convertir la date en objet Date
@@ -66,7 +63,29 @@ document.querySelector('#search-trip').addEventListener("click", function () {
                 document.querySelector('#state-search').style.display = 'none'
                 document.querySelector('#state-error').style.display = 'block'
             }
+
+
+            const elements = document.querySelectorAll('#trip-book')
+
+            elements.forEach(element => {
+                element.addEventListener('click', function () {
+                    console.log('Élément cliqué :', this)
+
+                    fetch('http://localhost:3000/users/addToCart', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(this)
+                    }).then(response => response.json())
+                })
+
+
+            })
         })
 
 
 })
+
+
+
+
+
