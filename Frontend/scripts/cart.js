@@ -66,4 +66,5 @@ function deleteTrip() {
     }
 }
 
+const total = document.querySelector("#id");
 
