@@ -61,7 +61,7 @@ function deleteTrip() {
                 travelId: tripBooks[i].id
             };
             console.log(tripBooks[i].id)
-            return
+
 
             fetch(`http://localhost:3000/users/deleteTrip`, {
                 method: 'DELETE',
