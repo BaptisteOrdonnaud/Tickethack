@@ -13,10 +13,11 @@ document.querySelector('#search-trip').addEventListener("click", function () {
     console.log(body)
 
 
-    const tripCrafter = (departure, arrival, date, price) => {
+    const tripCrafter = (departure, arrival, date, price, id) => {
 
         // Convertir la date en objet Date
         const tripDate = new Date(date);
+
 
         // Obtenir l'heure au format HH:mm
         const tripTime = tripDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
@@ -32,7 +33,7 @@ document.querySelector('#search-trip').addEventListener("click", function () {
                                 </div>
                                 <span class="trip-hours">${tripTime}</span>
                                 <span class="trip-price">${price}€</span>
-                                <button class="trip-book">Book</button>
+                                <button id="${id}" class="trip-book">Book</button>
                             </div>
                             `
         )
@@ -53,8 +54,12 @@ document.querySelector('#search-trip').addEventListener("click", function () {
 
                 for (let i = 0; i < trips.length; i++) {
 
+
+                    const id = trips[i]._id
+
                     document.querySelector('#state-trip').innerHTML += tripCrafter(
-                        trips[i].departure, trips[i].arrival, trips[i].date, trips[i].price
+
+                        trips[i].departure, trips[i].arrival, trips[i].date, trips[i].price, id
                     )
 
                 }
@@ -71,10 +76,14 @@ document.querySelector('#search-trip').addEventListener("click", function () {
                 element.addEventListener('click', function () {
                     console.log('Élément cliqué :', this)
 
+                    const newTravel = {
+                        travelId: this.id
+                    }
+
                     fetch('http://localhost:3000/users/addToCart', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(this)
+                        body: JSON.stringify(newTravel)
                     }).then(response => response.json())
                 })
 
