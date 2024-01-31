@@ -144,7 +144,7 @@ input::placeholder {
 
 }
 
-#state-trip-content {
+.state-trip-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -155,14 +155,14 @@ input::placeholder {
     border-radius: 8px;
 }
 
-#state-trip-content span {
+.state-trip-content span {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1.1rem;
 
 }
 
-#trip-book {
+.trip-book {
     background-color: #4AA990;
     border: none;
     color: white;
@@ -172,10 +172,10 @@ input::placeholder {
     cursor: pointer;
 }
 
-#city-A {
+.city-A {
     margin-right: 4px;
 }
 
-#city-B {
+.city-B {
     margin-left: 4px;
 }

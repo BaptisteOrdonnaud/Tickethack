@@ -55,7 +55,7 @@
 
 }
 
-#trip-book {
+.trip-book {
     background-color: #4AA990;
     border: none;
     color: white;
@@ -65,11 +65,11 @@
     cursor: pointer;
 }
 
-#city-A {
+.city-A {
     margin-right: 4px;
 }
 
-#city-B {
+.city-B {
     margin-left: 4px;
 }
 
