@@ -3,7 +3,7 @@ function Cart() {
     fetch('http://localhost:3000/users/allTrips')
         .then(response => response.json())
         .then(data => {
-            console.log(data.allTrips[0].trip.departure);
+            //console.log(data.allTrips[0].trip._id);
             if (data.allTrips.length) {
                 document.querySelector('#container-cart-text').style.display = 'none'
                 document.querySelector('#container-cart-full').style.display = 'block'
@@ -24,7 +24,7 @@ function Cart() {
 
 
                     document.querySelector('#state-trip-content').innerHTML += `
-                        
+                        <div class="travelContainer">
                             <div class="state-trip-cities">
                                 <span class="city-A">${departure}</span>
                                 <span>></span>
@@ -33,7 +33,7 @@ function Cart() {
                             <span class="trip-hours">${tripTime}</span>
                             <span class="trip-price">${price}€</span>
                             <button id="${id}" class="trip-book">X</button>
-                        
+                        </div>
                     `;
                 }
                 deleteTrip()
@@ -46,10 +46,10 @@ Cart()
 
 
 function deleteTrip() {
-    for (let i = 0; i < document.querySelectorAll('#state-trip-content').length; i++) {
-        document.querySelectorAll('#trip-book')[i].addEventListener('click', () => {
+    for (let i = 0; i < document.querySelectorAll('.trip-book').length; i++) {
+        document.querySelectorAll('.trip-book')[i].addEventListener('click', () => {
             const body = {
-                travelId: this.id
+                travelId: document.querySelectorAll('.trip-book')[i].id
             }
             fetch(`http://localhost:3000/users/deleteTrip`, {
                 method: 'DELETE',
@@ -59,7 +59,7 @@ function deleteTrip() {
                 .then(response => response.json())
                 .then(data => {
                     if (data.result) {
-                        this.parentNode.remove();
+                        document.querySelectorAll('.trip-book')[i].parentNode.remove();
                     }
                 });
         });
