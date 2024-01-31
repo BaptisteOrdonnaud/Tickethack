@@ -38,10 +38,6 @@
 
 
 #state-trip-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
     background-color: #F7F1F0;
     margin: 5% 7%;
     padding: 1% 2%;
