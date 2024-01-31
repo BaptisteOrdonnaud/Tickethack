@@ -65,7 +65,7 @@ document.querySelector('#search-trip').addEventListener("click", function () {
             }
 
 
-            const elements = document.querySelectorAll('#trip-book')
+            const elements = document.querySelectorAll('.trip-book')
 
             elements.forEach(element => {
                 element.addEventListener('click', function () {
