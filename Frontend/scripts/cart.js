@@ -42,20 +42,21 @@ function Cart() {
                 document.querySelector("#total").textContent = totalPrice
                 deleteTrip()
 
+
             }
 
         })
 }
 
 Cart()
-
-
 function deleteTrip() {
-    for (let i = 0; i < document.querySelectorAll('.trip-book').length; i++) {
-        document.querySelectorAll('.trip-book')[i].addEventListener('click', () => {
+    const tripBooks = document.querySelectorAll('.trip-book');
+    for (let i = 0; i < tripBooks.length; i++) {
+        tripBooks[i].addEventListener('click', () => {
             const body = {
-                travelId: document.querySelectorAll('.trip-book')[i].id
-            }
+                travelId: tripBooks[i].id
+            };
+
             fetch(`http://localhost:3000/users/deleteTrip`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
@@ -64,13 +65,16 @@ function deleteTrip() {
                 .then(response => response.json())
                 .then(data => {
                     if (data.result) {
-                        document.querySelectorAll('.trip-book')[i].parentNode.remove();
+                        tripBooks[i].parentNode.remove();
                     }
                     location.reload();
                 });
         });
     }
 }
+
+
+
 
 const total = document.querySelector("#id");
 
