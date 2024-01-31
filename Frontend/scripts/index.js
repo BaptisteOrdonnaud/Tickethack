@@ -24,15 +24,15 @@ document.querySelector('#search-trip').addEventListener("click", function () {
 
         return (
             `
-        <div id="state-trip-content">
-                                <div id="state-trip-cities">
-                                    <span id="city-A">${departure}</span>
+        <div class="state-trip-content">
+                                <div class="state-trip-cities">
+                                    <span class="city-A">${departure}</span>
                                     <span>></span>
-                                    <span id="city-B">${arrival}</span>
+                                    <span class="city-B">${arrival}</span>
                                 </div>
-                                <span id="trip-hours">${tripTime}</span>
-                                <span id="trip-price">${price}€</span>
-                                <button id="trip-book">Book</button>
+                                <span class="trip-hours">${tripTime}</span>
+                                <span class="trip-price">${price}€</span>
+                                <button class="trip-book">Book</button>
                             </div>
                             `
         )
