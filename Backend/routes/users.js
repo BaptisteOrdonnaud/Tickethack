@@ -4,11 +4,11 @@ const User = require('../models/users')
 
 const idUser = '65b9273e625302934946df7d';
 
-router.get('/cart', (req, res) => {
-  User.findOne({ username: 'Jason' }).then(user => {
-    res.json({ cart: user.trips })
-  })
-})
+// router.get('/cart', (req, res) => {
+//   User.findOne({ username: 'Jason' }).then(user => {
+//     res.json({ cart: user.trips })
+//   })
+// })
 
 
 router.post('/addToCart', (req, res) => {
@@ -40,14 +40,14 @@ const updateUserTrips = (travelId, res) => {
 }
 
 // travel not payed
-router.get('/notPayedTrip', async (req, res) => {
+router.get('/allTrips', async (req, res) => {
 
   const user = await User.findById(idUser).populate('trips.trip');
 
-  const cartPasPayed = user.trips.filter((trip) => !trip.isPaid)
+  const allTrips = user.trips.filter((trip) => !trip.isPaid)
 
 
-  res.json({ cartPasPayed })
+  res.json({ allTrips })
 }
 )
 
