@@ -124,7 +124,7 @@ input::placeholder {
 }
 
 #state-search {
-    display: none;
+    display: block;
 }
 
 
@@ -137,7 +137,7 @@ input::placeholder {
 /* STATE-TRIP */
 
 #state-trip {
-    display: block;
+    display: none;
     overflow: scroll;
     height: 400px;
 
