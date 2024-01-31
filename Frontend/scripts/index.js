@@ -12,6 +12,35 @@ document.querySelector('#search-trip').addEventListener("click", function () {
 
     console.log(body)
 
+
+
+
+
+    const tripCrafter = (departure, arrival, date, price) => {
+
+        // Convertir la date en objet Date
+        const tripDate = new Date(date);
+
+        // Obtenir l'heure au format HH:mm
+        const tripTime = tripDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+
+
+        return (
+            `
+        <div id="state-trip-content">
+                                <div id="state-trip-cities">
+                                    <span id="city-A">${departure}</span>
+                                    <span>></span>
+                                    <span id="city-B">${arrival}</span>
+                                </div>
+                                <span id="trip-hours">${tripTime}</span>
+                                <span id="trip-price">${price}€</span>
+                                <button id="trip-book">Book</button>
+                            </div>
+                            `
+        )
+    }
+
     fetch('http://localhost:3000/trips', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -19,11 +48,23 @@ document.querySelector('#search-trip').addEventListener("click", function () {
     }).then(response => response.json())
         .then(dataTrip => {
             console.log(dataTrip)
+            const trips = dataTrip.result
+            if (trips.length) {
+                document.querySelector('#state-search').style.display = 'none'
+                document.querySelector('#state-trip').style.display = 'block'
 
-            if (dataTrip.result) {
+
+                for (let i = 0; i < trips.length; i++) {
+
+                    document.querySelector('#state-trip').innerHTML += tripCrafter(
+                        trips[i].departure, trips[i].arrival, trips[i].date, trips[i].price
+                    )
+
+                }
 
             } else {
-                // ici quand ça bug
+                document.querySelector('#state-search').style.display = 'none'
+                document.querySelector('#state-error').style.display = 'block'
             }
         })
 
