@@ -4,11 +4,11 @@ function tripsBooked() {
         .then(data => {
             console.log(data.cartPayed);
 
-            if (data.tripBooked && data.cartPayed.length > 0) {
-                document.querySelector('#container-booking-text').style.display = 'none';
-                document.querySelector('#container-booking-full').style.display = 'block';
+            if (data.cartPayed && data.cartPayed.length > 0) {
+                document.querySelector('#container-books-text').style.display = 'none';
+                document.querySelector('#container-books-full').style.display = 'block';
 
-                let tripContent = '';
+
 
                 for (let i = 0; i < data.cartPayed.length; i++) {
                     const departure = data.cartPayed[i].trip.departure;
@@ -22,7 +22,7 @@ function tripsBooked() {
                     // Obtenir l'heure au format HH:mm
                     const tripTime = tripDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 
-                    tripContent += `
+                    const tripContent = `
                         <div class="travelContainer">
                             <div class="state-trip-cities">
                                 <span class="city-A">${departure}</span>
@@ -34,9 +34,9 @@ function tripsBooked() {
                             <span>Departure in <span id="book-hour"></span> hours</span>
                         </div>
                     `;
+                    document.querySelector('#state-trip-content').innerHTML += tripContent;
                 }
 
-                document.querySelector('#state-trip-content').innerHTML = tripContent;
             }
         });
 }
