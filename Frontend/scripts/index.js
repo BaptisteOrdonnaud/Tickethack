@@ -85,6 +85,7 @@ document.querySelector('#search-trip').addEventListener("click", function () {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(newTravel)
                     }).then(response => response.json())
+                    window.location.assign('cart.html')
                 })
 
 
